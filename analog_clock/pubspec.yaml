@@ -8,8 +8,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  #flutter_clock_helper:
+   # path: ../flutter_clock_helper
   flutter_clock_helper:
-    path: ../flutter_clock_helper
+    git:
+      url: git://github.com/emvaized/neumorphic_flutter_clock
+      path: ./flutter_clock_helper/
+      ref: master
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
