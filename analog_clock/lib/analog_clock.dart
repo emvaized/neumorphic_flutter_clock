@@ -106,10 +106,12 @@ class _AnalogClockState extends State<AnalogClock> {
             // Shadow color
             canvasColor: Colors.grey[500],
             // Inner shadow color
-            dividerColor: Colors.grey[400],
+            //dividerColor: Colors.grey[400],
+            dividerColor: Colors.white54,
             // Icon color:
             errorColor: Colors.grey[800].withOpacity(0.1),
-            backgroundColor: Colors.grey[300],
+           backgroundColor: Colors.grey[300],
+           // backgroundColor: Colors.white30,
           )
         : Theme.of(context).copyWith(
             // Hour hand.
@@ -135,7 +137,8 @@ class _AnalogClockState extends State<AnalogClock> {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        final unit = constraints.biggest.width / 50;
+        //final unit = constraints.biggest.width / 50;
+        final unit = constraints.biggest.width / 30;
 
         return Semantics.fromProperties(
           properties: SemanticsProperties(
@@ -144,7 +147,11 @@ class _AnalogClockState extends State<AnalogClock> {
           ),
           child: Container(
             padding: EdgeInsets.all(2 * unit),
-            color: customTheme.backgroundColor,
+           // padding: EdgeInsets.all(unit),
+            decoration: BoxDecoration(
+              color: customTheme.backgroundColor,
+              shape: BoxShape.circle,
+            ),
             child: Stack(
               children: [
                 OuterShadows(customTheme: customTheme, unit: unit),
