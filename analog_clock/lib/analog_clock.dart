@@ -137,7 +137,6 @@ class _AnalogClockState extends State<AnalogClock> {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        //final unit = constraints.biggest.width / 50;
         final unit = constraints.biggest.width / 30;
 
         return Semantics.fromProperties(
@@ -145,9 +144,9 @@ class _AnalogClockState extends State<AnalogClock> {
             label: 'Analog clock with time $time',
             value: time,
           ),
-          child: Container(
-            padding: EdgeInsets.all(2 * unit),
-           // padding: EdgeInsets.all(unit),
+          child:
+          Container(
+            padding: EdgeInsets.all(unit),
             decoration: BoxDecoration(
               color: customTheme.backgroundColor,
               shape: BoxShape.circle,
